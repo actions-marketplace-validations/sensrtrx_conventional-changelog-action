@@ -22,7 +22,7 @@ module.exports = {
    * @return {*}
    */
   bump: (packageJson, releaseType) => {
-    let [major, minor, patch] = packageJson.version.split('.')
+    let [major, minor, patch] = packageJson.image.tag.version.split('.')
 
     switch (releaseType) {
       case 'major':
@@ -41,7 +41,7 @@ module.exports = {
     }
 
     // Update the package.json with the new version
-    packageJson.version = `${major}.${minor}.${patch}`
+    packageJson.image.tag.version.version = `${major}.${minor}.${patch}`
 
     return packageJson
   },
