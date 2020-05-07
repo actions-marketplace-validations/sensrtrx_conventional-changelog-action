@@ -43,3 +43,8 @@ inputs:
     description: 'The path to the  module.json to use'
     default: './package.json'
     required: true
+    
+  createRelease:
+    description: 'Should a tag and release be created for this chnage'
+    default: false
+    required: false
