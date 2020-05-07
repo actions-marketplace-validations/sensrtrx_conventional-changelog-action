@@ -1,4 +1,4 @@
-name: 'Conventional Changelog Action'
+name: 'Azure IoT Edge - Conventional Changelog Action'
 description: 'Bump version, tag commit and generates changelog with conventional commits.'
 author: 'Tycho Bokdam'
 runs:
@@ -40,6 +40,6 @@ inputs:
     required: false
 
   package-json:
-    description: 'The path to the package.json to use'
+    description: 'The path to the  module.json to use'
     default: './package.json'
-    required: false
+    required: true
