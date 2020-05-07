@@ -1,4 +1,4 @@
-# Conventional Changelog action
+# Conventional Changelog action for Azure IoT Edge Modules
 
 This action will bump version, tag commit and generate a changelog with conventional commits.
 
@@ -12,7 +12,7 @@ Updates verions for Azure IoT Modules.
 - **Optional** `tag-prefix`: Prefix for the git tags. Default `v`.
 - **Optional** `output-file`: File to output the changelog to. Default `CHANGELOG.md`.
 - **Optional** `release-count`: Number of releases to preserve in changelog. Default `5`, use `0` to regenerate all.
-- **Optional** `package-json`: The path to the package.json to use. Default `./package.json`.
+- **Optional** `package-json`: The path to the module.json to use. Default `./package.json`.
 
 ## Example usages
 
