@@ -2,6 +2,8 @@
 
 This action will bump version, tag commit and generate a changelog with conventional commits.
 
+Updates verions for Azure IoT Modules. 
+
 ## Inputs
 
 - **Required** `github-token`: Github token.
