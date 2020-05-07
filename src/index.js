@@ -4,6 +4,7 @@ const conventionalRecommendedBump = require('conventional-recommended-bump')
 const git = require('./helpers/git')
 const packageJson = require('./helpers/packageJson')
 const generateChangelog = require('./helpers/generateChangelog')
+const createRelease = core.getInput('createRelease') || false
 
 async function run() {
   try {
@@ -53,7 +54,9 @@ async function run() {
         // Add changed files to git
         await git.add('.')
         await git.commit(commitMessage.replace('{version}', `${tagPrefix}${jsonPackage.version}`))
-        //await git.createTag(`${tagPrefix}${jsonPackage.version}`)
+        if(createRelease) { 
+          await git.createTag(`${tagPrefix}${jsonPackage.version}`)
+        }
         await git.push()
       }
     })
