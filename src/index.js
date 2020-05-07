@@ -39,7 +39,8 @@ async function run() {
 
         // Update the package.json file
         packageJson.update(jsonPackage)
-
+        jsonPackage.version = jsonPackage.image.tag.version;
+        
         core.info(`New version: ${jsonPackage.version}`)
 
         // Generate the changelog
