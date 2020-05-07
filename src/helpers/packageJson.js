@@ -41,7 +41,7 @@ module.exports = {
     }
 
     // Update the package.json with the new version
-    packageJson.image.tag.version.version = `${major}.${minor}.${patch}`
+    packageJson.image.tag.version = `${major}.${minor}.${patch}`
 
     return packageJson
   },
