@@ -39,9 +39,11 @@ async function run() {
 
         // Update the package.json file
         packageJson.update(jsonPackage)
-        jsonPackage.version = jsonPackage.image.tag.version;
+        jsonPackage.version = jsonPackage.image.tag.version
         
         core.info(`New version: ${jsonPackage.version}`)
+        core.info(`New version: ${jsonPackage.image.tag.version}`)
+        core.info("JSON " + JSON.stringify(jsonPackage))
 
         // Generate the changelog
         await generateChangelog(tagPrefix, preset, jsonPackage, outputFile, releaseCount)
@@ -51,7 +53,7 @@ async function run() {
         // Add changed files to git
         await git.add('.')
         await git.commit(commitMessage.replace('{version}', `${tagPrefix}${jsonPackage.version}`))
-        await git.createTag(`${tagPrefix}${jsonPackage.version}`)
+        //await git.createTag(`${tagPrefix}${jsonPackage.version}`)
         await git.push()
       }
     })
