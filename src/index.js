@@ -23,7 +23,7 @@ async function run() {
     core.info(`Using "${outputFile}" as output file`)
 
     core.info('Pull to make sure we have the full git history')
-    //await git.pull()
+    await git.pull()
 
     conventionalRecommendedBump({ preset, tagPrefix }, async(error, recommendation) => {
       if (error) {
