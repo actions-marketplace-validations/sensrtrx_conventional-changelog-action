@@ -2,7 +2,7 @@ const core = require('@actions/core')
 const exec = require('@actions/exec')
 
 const { GITHUB_REPOSITORY, GITHUB_REF } = process.env
-core.info("GITHUB REF " + GITHUB_REF);
+
 const branch = GITHUB_REF.replace('refs/heads/', '')
 
 module.exports = new (class Git {
@@ -21,7 +21,7 @@ module.exports = new (class Git {
     this.updateOrigin(`https://x-access-token:${githubToken}@github.com/${GITHUB_REPOSITORY}.git`)
 
     // Checkout the branch
-    //this.checkout()
+    this.checkout()
   }
 
   /**
